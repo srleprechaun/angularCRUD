@@ -1,0 +1,12 @@
+﻿CREATE TABLE Client
+(
+	cpf VARCHAR(14) PRIMARY KEY,
+	clientName VARCHAR(20) NOT NULL,
+	lastname VARCHAR(30) NOT NULL,
+	adress VARCHAR(70) NOT NULL,
+	number INT NOT NULL,
+	neighborhood VARCHAR(30) NOT NULL,
+	cellPhone VARCHAR(15) NOT NULL,
+	phone VARCHAR(14) NOT NULL,
+	zipCode VARCHAR(9) NOT NULL
+);

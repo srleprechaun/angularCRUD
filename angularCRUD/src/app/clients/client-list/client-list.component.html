@@ -1,0 +1,28 @@
+<table class="table table-sm table-houver">
+  <tr *ngFor="let client of clientService.clientList">
+
+    <th>Name</th>
+    <td>{{client.clientName}} {{ client.lastname }}</td>
+
+    <th>CPF</th>
+    <td>{{ client.cpf }}</td>
+
+    <!-- <th>Adress</th>
+    <td>{{ client.adress }} {{ client.number }} - {{ client.neighborhood }} - {{ client.zipCode }}</td> -->
+
+    <th>Cell Phone</th>
+    <td>{{ client.cellPhone }}</td>
+
+    <th>Phone</th>
+    <td>{{ client.phone }}</td>
+
+    <td>
+      <a class="btn" (click)="showForEdit(client)">
+        <i class="fa fa-pencil-square-o"></i>
+      </a>
+      <a class="btn text-danger" (click)="onDelete(client.cpf)">
+        <i class="fa fa-trash-o"></i>
+      </a>
+    </td>
+  </tr>
+</table>

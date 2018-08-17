@@ -1,0 +1,68 @@
+<form class="emp-form" #clientForm="ngForm" (ngSubmit)="onSubmit(clientForm)">
+  <input class="form-control" type="hidden" name="cpf" #cpf="ngModel" [(ngModel)]="clientService.selectedClient.cpf">
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <input class="form-control" name="clientName" #clientName="ngModel" [(ngModel)]="clientService.selectedClient.clientName"
+        placeholder="First Name" required>
+      <div class="validation-error" *ngIf="clientName.invalid && clientName.touched">This field is required.</div>
+    </div>
+    <div class="form-group col-md-6">
+      <input class="form-control" name="lastname" #lastname="ngModel" [(ngModel)]="clientService.selectedClient.lastname" placeholder="Last Name"
+        required>
+      <div class="validation-error" *ngIf="lastname.invalid && lastname.touched">This field is required.</div>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <input class="form-control" name="cpf" #cpf="ngModel" [(ngModel)]="clientService.selectedClient.cpf" placeholder="CPF" required>
+      <div class="validation-error" *ngIf="cpf.invalid && cpf.touched">This field is required.</div>
+    </div>
+    <div class="form-group col-md-6">
+      <input class="form-control" name="zipCode" #zipCode="ngModel" [(ngModel)]="clientService.selectedClient.zipCode" placeholder="ZipCode"
+        required>
+      <div class="validation-error" *ngIf="zipCode.invalid && zipCode.touched">This field is required.</div>
+    </div>
+    <div class="form-group col-md-6">
+      <input class="form-control" name="adress" #adress="ngModel" [(ngModel)]="clientService.selectedClient.adress" placeholder="Adress"
+        required>
+      <div class="validation-error" *ngIf="adress.invalid && adress.touched">This field is required.</div>
+    </div>
+    <div class="form-group col-md-3">
+      <input class="form-control" name="number" #number="ngModel" [(ngModel)]="clientService.selectedClient.number" placeholder="Number"
+        required>
+      <div class="validation-error" *ngIf="number.invalid && number.touched">This field is required.</div>
+    </div>
+    <div class="form-group col-md-6">
+      <input class="form-control" name="neighborhood" #neighborhood="ngModel" [(ngModel)]="clientService.selectedClient.neighborhood"
+        placeholder="Neighborhood" required>
+      <div class="validation-error" *ngIf="neighborhood.invalid && neighborhood.touched">This field is required.</div>
+    </div>
+    <div class="form-group col-md-6">
+      <input class="form-control" name="cellPhone" #cellPhone="ngModel" [(ngModel)]="clientService.selectedClient.cellPhone" placeholder="Cell Phone"
+        required data-format="(dd) ddddd-dddd">
+      <div class="validation-error" *ngIf="cellPhone.invalid && cellPhone.touched">This field is required.</div>
+    </div>
+    <div class="form-group col-md-6">
+      <input class="form-control" name="phone" #phone="ngModel" [(ngModel)]="clientService.selectedClient.phone" placeholder="Phone"
+        required>
+      <div class="validation-error" *ngIf="phone.invalid && phone.touched">This field is required.</div>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-5">
+      <button [disabled]="!clientForm.valid" type="submit" class="btn btn-lg btn-block btn-info">
+        <i class="fa fa-floppy-o"></i> New Client</button>
+    </div>
+    <div class="form-group col-md-4">
+      <button [disabled]="!clientForm.valid" class="btn btn-lg btn-block btn-info" (click)="updateClient(clientForm)">
+        <i class="fa fa-share-square-o"></i> Update</button>
+    </div>
+    <div class="form-group col-md-3">
+      <button type="button" class="btn btn-lg btn-block btn-secondary" (click)="resetForm(clientForm)">
+        <i class="fa fa-repeat"></i> Reset</button>
+    </div>
+  </div>
+
+</form>
